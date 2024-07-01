@@ -1,6 +1,6 @@
 <p align="center">
   <a>
-    <img src="img/logo.webp" width="1024" height="1024">
+    <img src="img/logo.webp" width="512" height="512">
   </a>
 </p>
 <h1 align="center">Radar Data Processing and Conversion Project</h1>
