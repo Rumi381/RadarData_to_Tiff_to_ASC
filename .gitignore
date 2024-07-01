@@ -1,0 +1,5 @@
+# Ignore the wct folder
+wct-4.2.0-win32/
+
+# Ignore all .zip files
+*.zip

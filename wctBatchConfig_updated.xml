@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<wctExportBatchOptions version="3">
+   <!--
+      Logging options: These can be 'SEVERE', 'WARNING', 'INFO', 'DEBUG'
+   -->
+   <logging> WARNING</logging>
+	
+	
+	
+	<!--  ============================================================== -->
+	<!--  Grid Section - decoding and filtering options                 -->
+	<!--  ============================================================== -->
+   <grid>
+   
+   <!--   match="exact|ignoreCase|wildcard|regex"  sometime in the future? -->
+      <gridOptions>
+         <variable name="Total_precipitation_surface_1_Hour_Accumulation"/>
+         <!-- lookupType can be "closestValue" (no not yet), "index" (yes - only index is supported) -->
+         <time    lookupType="index" lookup="0"  />
+         <y lookupType="index" lookup="0"  />
+         <x  lookupType="index" lookup="0"  />
+      </gridOptions>
+   
+      <gridFilter>
+         <!--
+            Geographic Extent Filter units of decimal degrees
+         -->
+          
+         <minLat> NONE</minLat>
+         <maxLat> NONE</maxLat>
+         <minLon> NONE</minLon>
+         <maxLon> NONE</maxLon>
+         
+         <!--
+            Example geographic filter: Uncomment and modify if desired.
+            Because the 'min' or 'max' longitude value can be confusing,
+            it doesn't matter which has the 'true' min value. This will
+            be calculated automatically in the program.  Radar products default
+            to the range of the product centered on the Radar site.
+            GOES Satellite products default to a generous ConUS extent.
+         -->
+         <!-- 
+            <minLat> 35.0 </minLat> 
+            <maxLat> 36.0 </maxLat> 
+            <minLon>-90.0 </minLon> 
+            <maxLon> -91.0 </maxLon>
+            -->
+         <!--
+            (-82.6, 26.4, 1.2, 1.2) <minLat> 35.8 </minLat> <maxLat>
+            37.0 </maxLat> <minLon> -87.1 </minLon> <maxLon> -85.9
+            </maxLon>
+         -->
+         
+         <minValue> NONE </minValue>
+         <maxValue> NONE </maxValue>
+      </gridFilter>
+   </grid>
+      <exportGridOptions>
+      <!--
+         'squareGridSize' represents the size for the 'long' side of the
+         raster grid. The short side is dynamically calculated (always
+         height because we are on a lat/lon grid). The grid cell
+         resolution is dynamically calculated. For example, if 1000 is
+         used, the width will be 1000, but the height will probably be
+         somewhere between 800 and 900 depending on the latitude. This
+         is done to reduce filesize by minimizing the amount of 'noData'
+         areas outside the extent of the Radar site. If this value is
+         '-1', the 'gridCellResolution' value will be used and the
+         raster size is dynamically generated.
+      -->
+      <squareGridSize>-1</squareGridSize>
+      <!--
+         'gridCellResolution' represents the grid cell resolution in
+         decimal degrees. The actual size (height and width) of the
+         raster is dynamically calculated based on this value and the
+         extent of the data.  Currently all GOES Satellite data extents
+         default to a general ConUS area.  If this value is '-1', the
+         'squareGridSize' value will be used and the grid cell
+         resolution is dynamically generated. ** This functionality
+         implemented in version >= 1.5.1 **
+      -->
+      <gridCellResolution>0.04</gridCellResolution>
+
+      <!-- 'noDataValue': Value for 'No Data' points in the grid -->
+      <noDataValue>-999</noDataValue>
+      <!--
+         'smoothFactor': Smoothing factor to apply to the grid 0 = No
+         Smoothing, 8 = Moderate Smoothing, 16 = Heavy Smoothing PLEASE
+         USE WITH CAUTION!!! The smoothing algorithm is a simple
+         kernal-based smoothing used in common image manipulation
+         software. Each pixel will be equally averaged with a radius of
+         neighboring pixels. The number neighboring pixels used depends
+         on the smoothing factor and zoom extent. NOTE: Excessive
+         smoothing will distort the data and remove important features.
+         PLEASE USE WITH CAUTION!!!
+      -->
+      <smoothFactor>0</smoothFactor>
+   </exportGridOptions>
+
+	<!--  ============================================================== -->
+	<!--  Radar Section - decoding and filtering options                 -->
+	<!--  ============================================================== -->
+   
+   
+   
+
+   
+   <!-- Multiple timesteps defined by multiple files or dimensions -->
+   <!-- operations of 'EXPORT_ALL', 'MATH_MAX', 'MATH_MIN', etc... -->
+   <!--
+   <multipleTimestepHandler operation="EXPORT_ALL" />
+   -->
+   
+</wctExportBatchOptions>
