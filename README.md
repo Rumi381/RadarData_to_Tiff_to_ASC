@@ -43,7 +43,7 @@ The directory structure for this project is as follows:
 ## Step 1: Requesting Data from NSF NCAR EOL
 
 1. **Access the Website**:
-   Go to the [NSF NCAR EOL Data Archive](https://data.eol.ucar.edu/cgi-bin/codiac/fgr_form/id=21.093).
+   Go to the <a href="https://data.eol.ucar.edu/cgi-bin/codiac/fgr_form/id=21.093" target="_blank">NSF NCAR EOL Data Archive</a>.
 
 2. **Select Date Range**:
    - **Begin Date**: Set the start date for the data you need.
@@ -142,10 +142,10 @@ install.packages(c("raster", "rgdal", "XML", "data.table", "parallel", "doSNOW",
 ```
 
 #### Setting Up Java Environment
-Ensure you have Java installed on your system. Download it from the [official Java website](https://www.java.com/en/download/).
+Ensure you have Java installed on your system. Download it from the <a href="https://www.java.com/en/download/" target="_blank">Official Java website</a>.
 
 #### Download and Install WCT Tool
-Ensure to download the WCT tool from the NOAA Weather and Climate Toolkit page (Please unzip the wct-4.2.0-win32.zip file). Download it from the [official NOAA NCEI download page](https://www.ncdc.noaa.gov/wct/install.php).
+Ensure to download the WCT tool from the NOAA Weather and Climate Toolkit page (Please unzip the wct-4.2.0-win32.zip file). Download it from the <a href="https://www.ncdc.noaa.gov/wct/install.php" target="_blank">Official NOAA NCEI download page</a>.
 
 #### Verify WCT Tool Installation
 The `wct-4.2.0-win32` folder should contain all necessary files, including `wct.exe`. Verify the installation by running `wct.exe`:
